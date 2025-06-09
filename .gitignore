@@ -1,52 +1,74 @@
-# Prerequisites
-*.d
+# Rider / IntelliJ project settings
+.idea/
+/kol2oficial/kol2oficial/obj/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Build directories
+bin/
+obj/
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
-# Precompiled Headers
-*.gch
-*.pch
+# Rider-specific
+.idea/
+*.sln.iml
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# ASP.NET Core logs
+logs/
+*.log
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Paket dependency manager
+.paket/
+paket-files/
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Backup & temp files
+*.tmp
+*.bak
+*.old
+*.orig
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# DotCover coverage results
+*.dotCover
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# Visual Studio Code settings
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# NuGet packages
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Resharper / Rider caches (if any)
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# JetBrains caches
+.idea/.idea.*
+.idea/.cache/
+.idea/.gradle/
+
+# Local database
+*.mdf
+*.ldf
+
+# Entity Framework Migrations metadata
+Migrations/
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
