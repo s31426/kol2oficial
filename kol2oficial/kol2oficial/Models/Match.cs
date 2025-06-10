@@ -15,7 +15,7 @@ public class Match
     [ForeignKey(nameof(Map))]
     public int MapId { get; set; }
     
-    public DateTime? MatchDate { get; set; }
+    public DateTime MatchDate { get; set; }
     
     public int Team1Score { get; set; }
     public int Team2Score { get; set; }

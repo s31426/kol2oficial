@@ -13,7 +13,7 @@ public class Player
     [MaxLength(100)]
     public string LastName { get; set; } = null!;
     
-    public DateTime? BirthDate { get; set; }
+    public DateTime BirthDate { get; set; }
     
     public ICollection<Player_Match> Player_Matchs { get; set; } = null!;
 }

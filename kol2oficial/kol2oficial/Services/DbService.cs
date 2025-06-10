@@ -1,13 +1,47 @@
+using kol2oficial.Data;
+using kol2oficial.DTOs;
+using Microsoft.EntityFrameworkCore;
+
 namespace kol2oficial.Services;
 
 public class DbService : IDbService
 {
-    
-}
-// https://bss.pja.edu.pl/docs/students/linux/mssql_datagrip/
-// https://github.com/mpazio/apbd-2025-example-test-2
-// https://github.com/mpazio/apbd-2024-example-test-2
+    private readonly DataBaseContext _context;
 
-// dotnet ef migrations add Init
-// dotnet ef database update
-//
+    public DbService(DataBaseContext context)
+    {
+        _context = context;
+    }
+
+    public async Task<FinalDTO> GetMatchesById(int playerId)
+    {
+        var final = await _context.Player_Matchs.Select(
+            e => new FinalDTO
+            {
+                Player = new PlayerDTO()
+                {
+                    firstName = e.Player.FirstName,
+                    lastName = e.Player.LastName,
+                    birthDate = e.Player.BirthDate,
+                },
+                PlayerMatches = e.Match.Player_Matchs.Select(e => new PlayerMatchesDTO()
+                {
+                    Tournament = new TournamentDTO()
+                    {
+                        tournamentName = e.Match.TournamentId,
+                    },
+                    Map = new MapDTO()
+                    {
+                        mapName = e.Match.Map.Name,
+                    },
+                    Match = new matchDTO()
+                    {
+                        MatchDate = e.Match.MatchDate,
+                        team1Score = e.Match.Team1Score,
+                        team2Score = e.Match.Team2Score,
+                    }
+                }).ToList(),
+            }).FirstOrDefault(e => e.matchId == matchId);
+        return final;
+    }
+}
