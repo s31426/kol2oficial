@@ -64,8 +64,6 @@ _ReSharper*/
 *.mdf
 *.ldf
 
-# Entity Framework Migrations metadata
-Migrations/
 
 # Test results
 TestResults/
